@@ -1,15 +1,16 @@
 import React from 'react';
 import SingleCard from './SingleCard.jsx';
+import styles from './style/Style.module.css';
 
 
 export default function CardsLogic(props) {
 
     if (!props.cities) {
-        return <h2> Cities dont found </h2>
+        return <h2> No hay ciudades para mostrar </h2>
     };
 
     return (
-        <>
+        <div className={styles.CardContainer}>
             {props.cities.map(city =>
                 <SingleCard
                     key={city.id}
@@ -20,6 +21,6 @@ export default function CardsLogic(props) {
                     onClose={() => alert(city.name)}
                 />
             )}
-        </>
+        </div>
     );
 }

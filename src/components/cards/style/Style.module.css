@@ -1,0 +1,100 @@
+.CardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.CardBody {
+    background-color: #393E46;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 11px 9px 18px #000000;
+    -webkit-box-shadow: 11px 9px 18px #000000;
+    box-shadow: 11px 9px 18px #000000;
+}
+
+.CardTop {
+    display: grid;
+    grid-template-columns: 30px 200px 30px;
+    grid-template-rows: 30px 200px;
+}
+
+.CardTop button {
+    background-color: #222831;
+    color: #347474;;
+    width: 25px;
+    height: 25px;
+    grid-column-start: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+.CardTop img {
+    grid-column-start: 2;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+}
+
+.CardBottom {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 30px 3px 80px;
+}
+
+.CardBottom h2 {
+    color: #EEEEEE;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.Separator {
+    width: 75%;
+    height: 2px;
+    background-color: #347474;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.MinContainer {
+    color: #EEEEEE;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+.MaxContainer {
+    color: #EEEEEE;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .CardContainer {
+        background-color: teal;
+    }
+    .CardBody {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .CardContainer {
+        background-color: pink;
+    }
+    .CardBody {
+        width: 100%;
+    }
+}
+
+
