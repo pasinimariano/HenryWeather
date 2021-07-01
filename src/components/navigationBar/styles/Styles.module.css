@@ -1,0 +1,22 @@
+.NavBarContainer {
+    background-color: yellow;
+    display: flex;
+    height: 35px;
+}
+
+.NavBarContainer img {
+    margin-left: 5px;
+}
+
+.NavBarContainer h1 {
+    font-size: 15px;
+    align-self: center;
+    margin-left: 5px;
+}
+
+.SeachBar {
+    background-color: red;
+    height: 60%;
+    display: flex;
+    align-self: center;
+}

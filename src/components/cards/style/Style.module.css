@@ -7,10 +7,10 @@
 }
 
 .CardBody {
-    background-color: #393E46;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+    background-color: #383749;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
     -moz-box-shadow: 11px 9px 18px #000000;
     -webkit-box-shadow: 11px 9px 18px #000000;
     box-shadow: 11px 9px 18px #000000;
@@ -18,65 +18,71 @@
 
 .CardTop {
     display: grid;
-    grid-template-columns: 30px 200px 30px;
-    grid-template-rows: 30px 200px;
+    grid-template-columns: 15px 30px 200px 30px 15px;
+    grid-template-rows: 15px 30px 200px;
 }
 
 .CardTop button {
-    background-color: #222831;
-    color: #347474;;
+    background-color: #383749;
+    color: #477271;;
     width: 25px;
     height: 25px;
-    grid-column-start: 3;
+    grid-column-start: 4;
+    grid-row-start: 2;
     align-self: center;
     justify-self: center;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .CardTop img {
-    grid-column-start: 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
     align-self: center;
     justify-self: center;
-    width: 100%;
+    width: 85%;
 }
 
 .CardBottom {
     display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(2, 130px);
-    grid-template-rows: 30px 3px 80px;
+    grid-template-columns: 15px repeat(2, 130px) 15px;
+    grid-template-rows: 30px 3px 80px 15px 15px;
 }
 
 .CardBottom h2 {
-    color: #EEEEEE;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    color: #797888;
+    font-size: 16px;
+    grid-column-start: 2;
+    grid-column-end: 4;
     grid-row-start: 1;
     align-self: center;
-    justify-self: center;
 }
 
 .Separator {
-    width: 75%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 65%;
     height: 2px;
-    background-color: #347474;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    background-color: #477271;
 }
 
-.MinContainer {
-    color: #EEEEEE;
-    grid-column-start: 1;
-    grid-row-start: 3;
-    align-self: center;
-    justify-self: center;
-}
-
-.MaxContainer {
-    color: #EEEEEE;
+.TempContainer {
+    color: #797888;
+    font-size: 55px;
     grid-column-start: 2;
     grid-row-start: 3;
     align-self: center;
     justify-self: center;
+    text-align: center;
+}
+
+.TimeContainer {
+    color: #797888;
+    font-size: 12px;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    align-self: self-end;
 }
 
 @media only screen and (max-width: 750px) {

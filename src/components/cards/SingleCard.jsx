@@ -7,18 +7,16 @@ export default function SingleCard(props) {
         <div className={styles.CardBody}>
             <div className={styles.CardTop}>
                 <button onClick={props.onClose}> X </button>
-                <img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt={`${props.name} actual weather`} />
+                <img src={props.icon} alt={`${props.name} actual weather`} />
             </div>
             <div className={styles.CardBottom}>
-                <h2> {props.name} </h2>
+                <h2> {props.name}, {props.country} </h2>
                 <div className={styles.Separator}> </div>
-                <div className={styles.MinContainer}>
-                    <h3> Min </h3>
-                    <h4> {props.min}° </h4>
+                <div className={styles.TempContainer}>
+                    <h4> {props.temp}°C </h4>
                 </div>
-                <div className={styles.MaxContainer}>
-                    <h3> Max </h3>
-                    <h4> {props.max}° </h4>
+                <div className={styles.TimeContainer}>
+                    <h4> {props.time} </h4>
                 </div>
             </div>
         </div>
