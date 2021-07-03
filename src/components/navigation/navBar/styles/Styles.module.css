@@ -4,19 +4,13 @@
     height: 35px;
 }
 
-.NavBarContainer img {
+.HenryLogo {
     margin-left: 5px;
+    height: 100%;
 }
 
 .NavBarContainer h1 {
     font-size: 15px;
     align-self: center;
     margin-left: 5px;
-}
-
-.SeachBar {
-    background-color: red;
-    height: 60%;
-    display: flex;
-    align-self: center;
 }

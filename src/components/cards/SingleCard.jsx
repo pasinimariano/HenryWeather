@@ -1,8 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styles from './style/Style.module.css';
 
 
-export default function SingleCard(props) {
+const SingleCard = (props) => {
+
     return (
         <div className={styles.CardBody}>
             <div className={styles.CardTop}>
@@ -18,7 +20,12 @@ export default function SingleCard(props) {
                 <div className={styles.TimeContainer}>
                     <h4> {props.time} </h4>
                 </div>
+                <Link to={`/city/${props.id}`}>
+                    <button> Más detalles </button>
+                </Link>
             </div>
         </div>
     );
 }
+
+export default SingleCard;
