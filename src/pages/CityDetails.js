@@ -33,8 +33,15 @@ const CityDetails = (props) => {
 
     return(
         <div>
-            SOY CITY: {city.id}
-            NOMBRE: {city.name}
+            {!city ? (
+                <h2> LOADING ... </h2>
+            ) : (
+                <div> 
+                    <h2> SOY CITY: {city.id} </h2>
+                    <h2> NAME: {city.name} </h2>
+                </div>
+    
+            )}
         </div>
     );
 }
