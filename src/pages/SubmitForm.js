@@ -1,47 +1,38 @@
-import React, { useState } from 'react';
-import { validateUsername, validatePassword } from '../functions/validate.jsx';
+import React from 'react';
+import useForm from '../functions/useForm.jsx';
+import validate from '../functions/validate.jsx';
 
 
 const SubmitForm = () => {
 
-    const [input, setInput] = useState({
-        username: '',
-        password: '',
-    });
-
-    const [errors, setErrors] = useState({});
-
-    const handleInputChange = (state) => {
-        setInput({
-            ...input,
-            [state.target.name]: state.target.value
-        });
-        setErrors(validateUsername({
-            ...input,
-            [state.target.name]: state.target.value
-        }));
-    };
+    const { handleChange, handleErrors, values, handleSubmit, errors } = useForm(validate);
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h2> WELCOME! </h2>
             <h2> LOGIN </h2>
             <input
-                className={errors.username && 'danger'}
+                id='username'
                 type='text'
                 name='username'
-                value={input.username}
-                onChange={handleInputChange}
-                placeholder='USERNAME' />
-            {errors.username && (
-                <p className='danger'> {errors.username} </p>
-            )}
+                className='InputUsername'
+                placeholder='USERNAME'
+                value={values.username}
+                onChange={handleChange}
+                onBlur={handleErrors}
+            />
+            {errors.username && <p>{errors.username}</p>}
             <input
+                id='password'
                 type='password'
                 name='password'
-                value={input.password}
-                onChange={handleInputChange}
-                placeholder='PASSWORD' />
+                className='InputPassword'
+                placeholder='PASSWORD'
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleErrors}
+            />
+            {errors.password && <p>{errors.password}</p>}
             <button> Submit </button>
         </form>
     );
