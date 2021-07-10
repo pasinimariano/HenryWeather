@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import { getCity } from '../../../redux/actions/actionCreators.js';
 
 
-const SearchBar = (props) => {
+const SearchBar = ({ getCity }) => {
 
     let inputValue = React.createRef();
 
     let onClickHandler = (event) => {
         event.preventDefault();
-        props.getCity(inputValue.current.value);
+        getCity(inputValue.current.value);
         event.target.reset()
-    }
+    };
 
     return (
         <div className='SeachBar'>
@@ -26,12 +26,6 @@ const SearchBar = (props) => {
     );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        citiesLoaded: state.citiesLoaded
-    }
-};
-
 const mapDispatchToProps = (dispatch) => {
     return {
         getCity: city => dispatch(getCity(city))
@@ -39,6 +33,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(SearchBar);

@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { watch } = require("fs");
 
 
 module.exports = {
@@ -24,12 +25,17 @@ module.exports = {
             },
             {
                 test: /\.(css|scss)$/,
+                exclude: /node_modules/,
                 use: ["style-loader", "css-loader"]
             },
             {
-                test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
-                use: ["file-loader"]
-            }
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
         ]
     },
     plugins: [

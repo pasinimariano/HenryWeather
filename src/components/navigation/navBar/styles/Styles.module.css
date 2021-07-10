@@ -9,8 +9,85 @@
     height: 100%;
 }
 
-.NavBarContainer h1 {
-    font-size: 15px;
-    align-self: center;
-    margin-left: 5px;
+.LinkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    margin-left: 10px;
+    font-size: 10px;
+}
+
+.Link {
+    text-decoration: none;
+    color: black;
+}
+
+.Link :hover {
+    color:#F8B500;
+}
+
+.SearchBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+@media (max-width: 1200px) {
+    .LinkContainer {
+        width: 45%;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width:980px) {
+    .LinkContainer {
+        width: 40%;
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .LinkContainer {
+        width: 50%;
+        margin-left: 10px;
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .NavBarContainer {
+        display: grid;
+        height: 100%;
+        grid-template-rows: repeat(2, 30px);
+    }
+    .HenryLogo {
+        height: 100%;
+    }
+    .LinkContainer {
+        width: 70%;
+        margin-left: 10px;
+        font-size: 8px;
+    }
+    .SearchBar {
+        justify-content: flex-start;
+        margin-left: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .NavBarContainer {
+        display: grid;
+        height: 100%;
+        grid-template-rows: repeat(2, 30px);
+    }
+    .LinkContainer {
+        width: 70%;
+        font-size: 8px;
+    }
+    .SearchBar {
+        justify-content: flex-start;
+        margin-left: 17px;
+    }
 }

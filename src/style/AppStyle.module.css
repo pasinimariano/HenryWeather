@@ -1,5 +1,11 @@
+@font-face {
+   font-family: OldNewspaper;
+   src: url('./fonts/OldNewspaperTypes.ttf');
+}
+
 body {
    background-image: url('http://virginia.images.ogqcorp.com/images/a411/image/Nonex960/4426.jpg');
+   font-family: 'OldNewspaper';
 }
 
 .App {
