@@ -32,7 +32,7 @@ const Cards = ({ cities, removeCity }) => {
                             <h4> {(city.main.temp - 273.15).toFixed(1)}°C </h4>
                         </div>
                         <div className={styles.TimeContainer}>
-                            <h4>  props.time </h4>
+                            <h4> {city.timezone} </h4>
                         </div>
                         <Link to={`/city/${city.id}`} className={styles.Link}>
                             <button className={styles.Button}> Más detalles </button>
@@ -46,7 +46,7 @@ const Cards = ({ cities, removeCity }) => {
 
 const mapStateToProps = (state) => {
     return {
-        cities: state.citiesLoaded
+        cities: state.citiesLoaded,
     }
 };
 

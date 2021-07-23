@@ -1,49 +1,65 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getCity } from '../redux/actions/actionCreators';
+import Styles from './Styles/CityDetails.module.css'
 
 
 const CityDetails = (props) => {
 
-    const APIKEY = '4f1ca4abca8ab37b6d420864a5ca84e6';
-    const CITYID = props.match.params.id;
-    const [city, setCity] = useState();
+    const { city, getCity } = props;
+    const cityId = props.match.params.id;
 
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?id=${CITYID}&appid=${APIKEY}&units=metric`)
-            .then(response => response.json())
-            .then(data => {
-                let newCity = {
-                    id: data.id,
-                    name: data.name,
-                    timezone: data.timezone,
-                    country: data.sys.country,
-                    icon: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
-                    desciption: data.weather[0].description,
-                    temp: data.main.temp,
-                    feels_like: data.main.feels_like,
-                    temp_min: data.main.temp_min,
-                    temp_max: data.main.temp_max,
-                    pressure: data.main.pressure,
-                    humidity: data.main.humidity,
-                    visibility: data.visibility,
-                    wind: data.wind.speed,
-                };
-                setCity(newCity)
-            });
+        getCity(cityId)
     }, []);
 
-    return(
-        <div>
-            {!city ? (
-                <h2> LOADING ... </h2>
-            ) : (
-                <div> 
-                    <h2> SOY CITY: {city.id} </h2>
-                    <h2> NAME: {city.name} </h2>
+    return (
+        <div className={Styles.CityContainer}>
+            {!city ?
+                <h2>LOADING....</h2>
+                :
+                <div className={Styles.PEPE}>
+                    <div className={Styles.NameContainer}>
+                        <h2> {city.name}, {city.sys.country}</h2>
+                        <h3> {city.timezone}, {new Date().toISOString().substring(0, 10)}</h3>
+                    </div>
+                    <div className={Styles.TempContainer}>
+                        <img
+                            src={`http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`}
+                            alt={`${city.name} actual weather`}
+                        />
+                        <div className={Styles.ActualTemp}>
+                            <div className={Styles.MinMax}>
+                                <h4>
+                                    {(city.main.temp_min - 273.15).toFixed(1)}
+                                    -
+                                    {(city.main.temp_max - 273.15).toFixed(1) }
+                                </h4>
+                            </div>
+                            <div className={Styles.Actual}>
+                                <h2> {(city.main.temp - 273.15).toFixed(1)} °C </h2>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-    
-            )}
+            }
         </div>
-    );
-}
+    )
+};
+// {(city.main.temp - 273.15).toFixed(1)}°C
+const mapStateToProps = (state) => {
+    return {
+        city: state.cityDetails
+    }
+};
 
-export default CityDetails;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getCity: city => dispatch(getCity(city))
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(CityDetails);

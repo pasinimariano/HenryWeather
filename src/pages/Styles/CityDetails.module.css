@@ -1,0 +1,11 @@
+.CityContainer {
+    background-color: red;
+    width: 90%;
+    height: 550px;
+    margin: auto;
+}
+
+.TempContainer {
+    background-color: aqua;
+    height: 450px;
+}

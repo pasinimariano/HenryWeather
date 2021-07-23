@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home.jsx';
-import AboutUs from '../pages/AboutUs.js';
-import SubmitForm from '../pages/SubmitForm.js';
+import AboutUs from '../pages/AboutUs.jsx';
+import SubmitForm from '../pages/SubmitForm.jsx';
 import CityDetails from '../pages/CityDetails.jsx';
 
 

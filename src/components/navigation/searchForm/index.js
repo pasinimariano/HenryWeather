@@ -4,10 +4,10 @@ import { addCity } from '../../../redux/actions/actionCreators.js';
 import Styles from './styles/Style.module.css'
 
 
-const SearchBar = ({ addCity }) => {
+const SearchBar = ({ addCity, error }) => {
 
     let inputValue = React.createRef();
-
+    
     let onClickHandler = (event) => {
         event.preventDefault();
         addCity(inputValue.current.value);
@@ -29,6 +29,12 @@ const SearchBar = ({ addCity }) => {
     );
 }
 
+const mapStateToProps = (state) => {
+    return {
+        error: state.errorCities
+    }
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
         addCity: city => dispatch(addCity(city))
@@ -36,6 +42,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(SearchBar);
+

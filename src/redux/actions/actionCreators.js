@@ -9,7 +9,6 @@ export const addCity = (city) => {
             .then(json => {
                 dispatch({ type: ADD_CITY, payload: json })
             })
-            //.catch!!!!
     }
 };
 
@@ -20,14 +19,14 @@ export const removeCity = (id) => {
     }
 };
 
-export const getCity = (city) => {
+export const getCity = (id) => {
     const APIKEY = '4f1ca4abca8ab37b6d420864a5ca84e6';
     return dispatch => {
-        return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`)
+        return fetch(`http://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${APIKEY}`)
             .then(response => response.json())
             .then(json => {
                 dispatch({ type: GET_CITY, payload: json })
             })
-            //.catch!!!
     }
 };
+
