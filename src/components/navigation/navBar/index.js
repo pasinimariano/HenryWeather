@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchForm from '../searchForm/'
+import GlobalSearch from '../globalSearch/';
 import Logo from '../img/logoHenry.png';
 import Styles from './styles/Styles.module.css';
 
@@ -25,7 +25,7 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className={Styles.SearchBar}>
-                <SearchForm />
+                <GlobalSearch />
             </div>
         </div>
     );

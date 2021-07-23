@@ -1,0 +1,38 @@
+.SeachBar{
+    background-color: #2c2e439a;
+    width: 50%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:solid 3px;
+    -moz-border-radius: 13px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;   
+}
+
+.Form{
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Input {
+    background-color: #5C636E;
+    color: #2c2e43;
+    font-family: OldNewspaper;
+}
+
+.Button {
+    margin: 0px 10px 0px 10px;
+    background-color: #5C636E;
+    color: #2c2e43;
+    font-family: OldNewspaper;
+}
+
+@media (max-width: 685px) {
+    .SeachBar {
+        width: 90%;
+    }
+}

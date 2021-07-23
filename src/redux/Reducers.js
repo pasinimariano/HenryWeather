@@ -1,4 +1,4 @@
-import { ADD_CITY, REMOVE_CITY } from './actions/';
+import { ADD_CITY, REMOVE_CITY, GET_CITY } from './actions/';
 
 
 const initialState = {
@@ -20,6 +20,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 citiesLoaded: state.citiesLoaded.filter(city => city.id !== action.payload)
+            }
+        case GET_CITY:
+            return {
+                ...state,
+                cityDetails: action.payload
             }
         default:
             return state;

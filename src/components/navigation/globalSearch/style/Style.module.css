@@ -1,0 +1,23 @@
+@font-face {
+    font-family: OldNewspaper;
+    src: url('../../../../style/fonts/OldNewspaperTypes.ttf');
+}
+
+.FormContainer {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Input {
+    background-color: #5C636E;
+    color: black;
+    font-family: OldNewspaper;
+}
+
+.Button {
+    margin: 0px 10px 0px 10px;
+    background-color: #5C636E;
+    color: black;
+    font-family: OldNewspaper;
+}

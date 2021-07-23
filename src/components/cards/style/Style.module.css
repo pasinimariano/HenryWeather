@@ -1,19 +1,34 @@
+.NoData {
+    color: #182027;
+    background-color: #645757ad;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    border:solid 3px;
+    -moz-border-radius: 13px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;   
+}
+
 .CardContainer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     width: 100%;
+    margin-top: 25px;
 }
 
 .CardBody {
-    background-color: #383749;
+    background-color: #2c2e439a;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     border-radius: 7px;
     -moz-box-shadow: 11px 9px 18px #000000;
     -webkit-box-shadow: 11px 9px 18px #000000;
     box-shadow: 11px 9px 18px #000000;
+    margin: 25px;
 }
 
 .CardTop {
@@ -24,7 +39,7 @@
 
 .CardTop button {
     background-color: #383749;
-    color: #477271;;
+    color: #FFD523;;
     width: 25px;
     height: 25px;
     grid-column-start: 4;
@@ -47,11 +62,10 @@
 .CardBottom {
     display: grid;
     grid-template-columns: 15px repeat(2, 130px) 15px;
-    grid-template-rows: 30px 3px 80px 15px 15px;
+    grid-template-rows: 30px 3px 80px 15px 30px;
 }
 
 .CardBottom h2 {
-    color: #797888;
     font-size: 16px;
     grid-column-start: 2;
     grid-column-end: 4;
@@ -64,43 +78,44 @@
     grid-column-end: 4;
     width: 65%;
     height: 2px;
-    background-color: #477271;
+    background-color: #FFD523;
 }
 
 .TempContainer {
-    color: #797888;
     font-size: 55px;
     grid-column-start: 2;
     grid-row-start: 3;
     align-self: center;
     justify-self: center;
     text-align: center;
+    margin-left: 28px;
 }
 
 .TimeContainer {
-    color: #797888;
     font-size: 12px;
     grid-column-start: 2;
     grid-row-start: 5;
     align-self: self-end;
 }
 
-@media only screen and (max-width: 750px) {
-    .CardContainer {
-        background-color: teal;
-    }
-    .CardBody {
-        width: 48%;
-    }
+.Link {
+    grid-column-start: 3;
+    grid-row-start: 4;
 }
 
-@media only screen and (max-width: 500px) {
-    .CardContainer {
-        background-color: pink;
-    }
-    .CardBody {
-        width: 100%;
-    }
+.Button {
+    margin: 0px 10px 0px 10px;
+    background-color: #5C636E;
+    color: black;
+    font-family: OldNewspaper;
 }
 
-
+@media (max-width: 685px) {
+    .NoData {
+        width: 90%;
+        text-align: center;
+    }
+    .CardContainer {
+        margin-bottom: 25px;
+    }
+}

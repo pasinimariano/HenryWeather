@@ -34,8 +34,8 @@ const Cards = ({ cities, removeCity }) => {
                         <div className={styles.TimeContainer}>
                             <h4>  props.time </h4>
                         </div>
-                        <Link to={`/city/${city.id}`}>
-                            <button> Más detalles </button>
+                        <Link to={`/city/${city.id}`} className={styles.Link}>
+                            <button className={styles.Button}> Más detalles </button>
                         </Link>
                     </div>
                 </div>
